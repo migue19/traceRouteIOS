@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		75BE8887B70CC81F9A348DB1 /* Pods_googleRoute.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1129B42B666476E98A6494FC /* Pods_googleRoute.framework */; };
 		F2C67B6E1F5893A30016409F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2C67B6D1F5893A30016409F /* AppDelegate.swift */; };
 		F2C67B701F5893A30016409F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2C67B6F1F5893A30016409F /* ViewController.swift */; };
 		F2C67B731F5893A30016409F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F2C67B711F5893A30016409F /* Main.storyboard */; };
@@ -15,6 +16,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1129B42B666476E98A6494FC /* Pods_googleRoute.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_googleRoute.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		6C5B4658881CFA1C26BF00B8 /* Pods-googleRoute.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-googleRoute.release.xcconfig"; path = "Pods/Target Support Files/Pods-googleRoute/Pods-googleRoute.release.xcconfig"; sourceTree = "<group>"; };
+		7A6A2DB121BD3FD7DD5D0B66 /* Pods-googleRoute.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-googleRoute.debug.xcconfig"; path = "Pods/Target Support Files/Pods-googleRoute/Pods-googleRoute.debug.xcconfig"; sourceTree = "<group>"; };
 		F2C67B6A1F5893A30016409F /* googleRoute.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = googleRoute.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F2C67B6D1F5893A30016409F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F2C67B6F1F5893A30016409F /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -29,17 +33,37 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				75BE8887B70CC81F9A348DB1 /* Pods_googleRoute.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1ED0AF063F1AD25F915C6616 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				7A6A2DB121BD3FD7DD5D0B66 /* Pods-googleRoute.debug.xcconfig */,
+				6C5B4658881CFA1C26BF00B8 /* Pods-googleRoute.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		7A16DD5ADAB1B7C4222B8FA4 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				1129B42B666476E98A6494FC /* Pods_googleRoute.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		F2C67B611F5893A30016409F = {
 			isa = PBXGroup;
 			children = (
 				F2C67B6C1F5893A30016409F /* googleRoute */,
 				F2C67B6B1F5893A30016409F /* Products */,
+				1ED0AF063F1AD25F915C6616 /* Pods */,
+				7A16DD5ADAB1B7C4222B8FA4 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -71,9 +95,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = F2C67B7C1F5893A30016409F /* Build configuration list for PBXNativeTarget "googleRoute" */;
 			buildPhases = (
+				E2631B61356260CAC31D39FC /* [CP] Check Pods Manifest.lock */,
 				F2C67B661F5893A30016409F /* Sources */,
 				F2C67B671F5893A30016409F /* Frameworks */,
 				F2C67B681F5893A30016409F /* Resources */,
+				1C1DE6A117E3797335B80818 /* [CP] Embed Pods Frameworks */,
+				CB87E6814A7E905EFAC35834 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -130,6 +157,61 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		1C1DE6A117E3797335B80818 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-googleRoute/Pods-googleRoute-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		CB87E6814A7E905EFAC35834 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-googleRoute/Pods-googleRoute-resources.sh",
+				"${PODS_ROOT}/GoogleMaps/Maps/Frameworks/GoogleMaps.framework/Resources/GoogleMaps.bundle",
+				"${PODS_ROOT}/GooglePlaces/Frameworks/GooglePlaces.framework/Resources/GooglePlaces.bundle",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-googleRoute/Pods-googleRoute-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E2631B61356260CAC31D39FC /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-googleRoute-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		F2C67B661F5893A30016409F /* Sources */ = {
@@ -272,10 +354,11 @@
 		};
 		F2C67B7D1F5893A30016409F /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7A6A2DB121BD3FD7DD5D0B66 /* Pods-googleRoute.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 59RDL5YEJ8;
+				DEVELOPMENT_TEAM = MC2W678MVZ;
 				INFOPLIST_FILE = googleRoute/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = mx.com.nut.googleRoute;
@@ -287,10 +370,11 @@
 		};
 		F2C67B7E1F5893A30016409F /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6C5B4658881CFA1C26BF00B8 /* Pods-googleRoute.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 59RDL5YEJ8;
+				DEVELOPMENT_TEAM = MC2W678MVZ;
 				INFOPLIST_FILE = googleRoute/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = mx.com.nut.googleRoute;

@@ -39,7 +39,7 @@ class ViewController: UIViewController,CLLocationManagerDelegate,GMSMapViewDeleg
     }
     
     
-    func traceRoute(){
+    func traceRoute(latinit: Double,lnginit: Double,latfinal:Double,lngfinal:Double){
         /*let marker = GMSMarker()
         marker.position = CLLocationCoordinate2DMake(latitud, longitud)
         marker.groundAnchor = CGPoint(x: 0.5,y: 0.5)
@@ -47,8 +47,8 @@ class ViewController: UIViewController,CLLocationManagerDelegate,GMSMapViewDeleg
         
         let path = GMSMutablePath()
         
-        path.add(CLLocationCoordinate2DMake(latitud, longitud))
-        path.add(CLLocationCoordinate2DMake(19.433024, -99.154704))
+        path.add(CLLocationCoordinate2DMake(latinit, lnginit))
+        path.add(CLLocationCoordinate2DMake(latfinal,lngfinal))
         
         
         let rectangle = GMSPolyline(path: path)
@@ -80,7 +80,7 @@ class ViewController: UIViewController,CLLocationManagerDelegate,GMSMapViewDeleg
         
         self.mapView?.animate(to: camera)
         
-        traceRoute()
+        //traceRoute()
         //Finally stop updating location otherwise it will come again and again in this delegate
         self.locationManager.stopUpdatingLocation()
     }
@@ -123,19 +123,58 @@ class ViewController: UIViewController,CLLocationManagerDelegate,GMSMapViewDeleg
                     if let parseJSON = json {
                         let routes = parseJSON["routes"] as! NSMutableArray;
                         
-                        let legs = routes
+                        //routes.index(of: "")
+                        
+                        
+                        let legs = routes.mutableArrayValue(forKey: "legs")
                         print("Esto es legs: \(legs)")
                         
-                        let distance = legs["distance"] as! [String: Any]
+                       
                         
-                        print("Esto es distancia \(distance)")
                         
-                        let duration = legs["duration"]
-                        print("Esto es legs: \(legs)")
+                        for obj in legs{
+                            let aux = obj as! [NSDictionary]
+                            for aux2 in aux {
+                                 let steps = aux2["steps"] as! [NSDictionary]
+                                for step in steps{
+                                    let startlocation = step["start_location"] as! NSDictionary
+                                     let latinit = startlocation["lat"] as! Double
+                                     let lnginit = startlocation["lng"] as! Double
+                                    let endlocation = step["end_location"] as! NSDictionary
+                                    let latfinal = endlocation["lat"] as! Double
+                                    let lngfinal = endlocation["lng"] as! Double
+                                    
+                                    self.traceRoute(latinit: latinit, lnginit: lnginit, latfinal: latfinal, lngfinal: lngfinal)
+                                    print(startlocation)
+                                }
+                                //print(steps)
+                            }
+                            
+                            //let steps = aux["steps"]
+                                
+                                
+                            
+                            
+                            //let steps = aux[""]
+                            //print(steps)
+                            
+                            
+                            print("el objeto es: \(obj)")
+                            
+                        }
                         
-                        let step = legs["steps"]
+                       
                         
-                        print("esto es steps: \(step)")
+                        //let distance = legs["distance"] as! [String: Any]
+                        
+                        //print("Esto es distancia \(distance)")
+                        
+                        //let duration = legs["duration"]
+                        //print("Esto es legs: \(legs)")
+                        
+                        //let step = legs["steps"]
+                        
+                        //print("esto es steps: \(step)")
                         
                         
                         
